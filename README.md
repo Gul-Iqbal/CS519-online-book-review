@@ -44,7 +44,6 @@ online_book_review/
 
 ```bash
 # Clone project
-git clone <your-repo-url>
 git clone https://github.com/Gul-Iqbal/CS519-online-book-review.git
 
 # Setup virtual environment (optional)
@@ -65,3 +64,5 @@ python manage.py createsuperuser
 python manage.py runserver
 
 
+📜 License
+This project is for academic purposes only.
