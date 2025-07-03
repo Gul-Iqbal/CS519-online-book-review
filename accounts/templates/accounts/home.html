@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual University Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 2s ease-out;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen flex flex-col">
+
+  {% include 'accounts/navbar.html' %}
+
+  <div class="flex-grow flex flex-col items-center justify-center p-6 text-center fade-in">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-indigo-800">Final Year Project CS-519</h1>
+    <h2 class="text-2xl md:text-3xl mb-6 text-indigo-700">Virtual University of Pakistan</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl w-full space-y-4 text-gray-700">
+      <p><strong>Developed By:</strong> Muhammad Gul Iqbal</p>
+      <p><strong>VU ID:</strong> BC230400861</p>
+      <p><strong>Email:</strong> bc230400861mgi@vu.edu.pk<br>guliqbal87@hotmail.com</p>
+      <p><strong>Contact Numbers:</strong> 03215084659, 03086274557</p>
+      <p><strong>WhatsApp:</strong> 03180909816</p>
+    </div>
+  </div>
+
+</body>
+</html>

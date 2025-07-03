@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Virtual University Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.5s ease-out;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 min-h-screen flex flex-col">
+
+  {% include 'accounts/navbar.html' %}
+
+  <div class="flex-grow flex items-center justify-center p-6 fade-in">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-3xl font-bold text-center mb-6 text-indigo-700">Login to Your Account</h1>
+
+      <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 transition">
+
+        <input type="password" name="password" placeholder="Password" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 transition">
+
+        <button type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition duration-300">
+          Login
+        </button>
+      </form>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p class="text-red-500 text-center mt-4">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+</body>
+</html>

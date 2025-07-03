@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Virtual University Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.5s ease-out;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen flex flex-col">
+
+    {% include 'accounts/navbar.html' %}
+
+  <div class="flex-grow flex items-center justify-center p-6 fade-in">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto text-center space-y-6">
+      <h1 class="text-4xl font-bold text-indigo-700 mb-4">About Our System</h1>
+      <p class="text-gray-700 text-lg">
+        The <strong>Online Book Review and Recommendation System</strong> is developed as a Final Year Project for the course
+        <strong>CS-519</strong> at the <strong>Virtual University of Pakistan</strong>.
+      </p>
+      <p class="text-gray-700 text-lg">
+        This platform helps users to discover, review, and share books. Users can explore a wide catalog of books, submit personal reviews and ratings,
+        maintain a wishlist, and receive personalized recommendations based on their favorite genres.
+      </p>
+      <p class="text-gray-700 text-lg">
+        Administrators can manage books, moderate reviews, and ensure the quality of the platform.
+        The system aims to provide a seamless and user-friendly experience, encouraging a culture of reading and knowledge sharing.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
