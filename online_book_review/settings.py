@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',  ########### Session management ###########
     'django.contrib.messages',  ########### Messaging framework ###########
     'django.contrib.staticfiles',  ########### Static files handling ###########
-    'accounts',  ########### Our custom accounts app ###########
-    'books',  ########### Our custom books app ###########
+    'accounts.apps.AccountsConfig',
+    'books',
 ]
 
 ########### Middleware configurations ###########

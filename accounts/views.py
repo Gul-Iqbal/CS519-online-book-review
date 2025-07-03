@@ -13,6 +13,7 @@ from .models import Profile
 def home(request):
     return render(request, 'accounts/home.html')
 
+
 ########### Define the register view to handle user registration ###########
 def register(request):
     ########### Check if the request method is POST (form submitted) ###########
@@ -50,6 +51,7 @@ def register(request):
 
     ########### If GET request, simply render the registration form ###########
     return render(request, 'accounts/register.html')
+
 
 ########### Define the profile view that is only accessible to logged-in users ###########
 @login_required
@@ -99,9 +101,13 @@ def profile(request):
         'user_reviews': user_reviews,
         'wishlist_books': wishlist_books,
     })
+
+
 ############ Define the about and contact views ###########
 def about(request):
     return render(request, 'accounts/about.html')
+
+
 ############ Define the contact view ###########
 def contact(request):
     return render(request, 'accounts/contact.html')
@@ -111,11 +117,12 @@ def contact(request):
 def profile(request):
     user_reviews = Review.objects.filter(user=request.user)
     wishlist_books = Wishlist.objects.filter(user=request.user)
-    profile = Profile.objects.get(user=request.user)
+
+    # This line will create a Profile if it doesn't exist
+    profile, created = Profile.objects.get_or_create(user=request.user)
 
     return render(request, 'accounts/profile.html', {
         'user_reviews': user_reviews,
         'wishlist_books': wishlist_books,
         'profile': profile,
     })
-
